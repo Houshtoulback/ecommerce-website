@@ -13,7 +13,7 @@ function Hero(props: {header: string, paragraph: string, btnContent: string}) {
   const { header, paragraph, btnContent } = props;
   return (
     <div className='h-screen w-screen text-white' style={bgStyle} >
-      <Navbar textColor="#ffffff" border={false}/>
+      <Navbar greenMode={false} border={false}/>
 
       <div className="flex flex-col items-center justify-center py-48 capitalize text-center">
         <h1 className="text-lg md:text-2xl pb-10">{header}</h1>

@@ -1,34 +1,39 @@
 import {AiOutlineStar} from "react-icons/ai"
 
-function ShopItem() {
+function ShopItem(props: {imageLink: string, title: string, price: number}) {
+    const {imageLink, title, price} = props
     return (
-        <div className="flex flex-col w-72 items-center">
-            <img className="w-56 mt-4 object-cover" src="https://websitedemos.net/plant-shop-04/wp-content/uploads/sites/160/2018/01/pic19-free-img-300x300.jpg"/>
-            <h2 className="mt-2 w-full text-center font-medium capitalize break-words">Arrowhead</h2>
-            <span className="flex my-2 ">
+        <div className="flex flex-col m-2 lg:m-4 items-center">
+            <img className="w-56 mt-4 object-cover" src={imageLink}/>
+            <h2 className="mt-1 lg:mt-2 w-full text-center text-xs md:text-sm lg:font-medium capitalize ">{title}</h2>
+            <span className="hidden sm:flex my-1 lg:my-2 ">
                 <AiOutlineStar/>
                 <AiOutlineStar/>
                 <AiOutlineStar/>
                 <AiOutlineStar/>
                 <AiOutlineStar/>
             </span>
-            <p className="font-medium mb-5">$26.00</p>
+            <p className="font-medium mb-5">{`$${price}`}</p>
         </div>
     )
 }
 
 
-export default function Shop() {
+export default function Shop(props: {api: any}) {
+    const {api} = props;
+    
+    const renderList = api.map((item) => 
+        <ShopItem 
+            key={item.id} 
+            imageLink={item.imageLink} 
+            title={item.title} 
+            price={item.price}
+        /> 
+    )
+
   return (
-    <div className="p-24 w-7/12 grid grid-cols-3">
-        <ShopItem/>
-        <ShopItem/>
-        <ShopItem/>
-        <ShopItem/>
-        <ShopItem/>
-        <ShopItem/>
-        <ShopItem/>
-        <ShopItem/>
+    <div className="grid grid-cols-2 xl:grid-cols-3">    
+    {renderList}    
     </div>
   )
 }
