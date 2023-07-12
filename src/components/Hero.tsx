@@ -9,16 +9,16 @@ const bgStyle = {
   width: "100vw"
 }
 
-function Hero(props: {header: string, paragraph: string, btnContent: string}) {
-  const { header, paragraph, btnContent } = props;
+function Hero() {
+  
   return (
     <div className='h-screen w-screen text-white' style={bgStyle} >
       <Navbar greenMode={false} border={false}/>
 
       <div className="flex flex-col items-center justify-center py-48 capitalize text-center">
-        <h1 className="text-lg md:text-2xl pb-10">{header}</h1>
-        <p className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black w-6/12 break-normal overflow-y-hidden">{paragraph}</p>
-        <button className="py-4 px-5 mt-7 font-bold bg-green-600 hover:bg-green-700 hover:shadow-md transition">{btnContent}</button>
+        <h1 className="text-lg md:text-2xl pb-10">The Boutique Store For Plants!</h1>
+        <p className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black w-6/12 break-normal overflow-y-hidden">Everything Is Better With Plants</p>
+        <button className="py-4 px-5 mt-7 font-bold bg-green-600 hover:bg-green-700 hover:shadow-md transition">Shop Now</button>
       </div>
     
     </div>

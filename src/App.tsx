@@ -1,25 +1,24 @@
-// import Blog from "./components/Blog"
-// import Comments from "./components/Comments"
-// import Elementor from "./components/Elementor"
-// import Hero from "./components/Hero"
-// import Testimonials from "./components/Testimonials"
-// import Footer from "./components/Footer"
-import ShoppingPage from "./components/ShoppingPage"
+import HomePage from "./pages/HomePage"
+import Products from "./pages/Products"
+import NotFound from "./pages/NotFound";
+import { arrayApi } from "./api"
+
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   
   return (
-    <div className="select-none">
-      {/* <Hero header={"The Boutique Store For Plants!"} 
-      paragraph={"Everything Is Better With Plants"} 
-      btnContent={"Shop Now"}/>
-      <Testimonials/>
-      <Elementor/>
-      <Blog/>
-      <Comments/>
-      <Footer/> */}
-      <ShoppingPage/>
-    </div>
+    // <div className="select-none">
+    //   <HomePage/>
+    //   <Products arrayApi={arrayApi} navBorder={true} navGreenMode={true} />
+    // </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="shop" element={<Products arrayApi={arrayApi} navBorder={true} navGreenMode={true} />} />
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
