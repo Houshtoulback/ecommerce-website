@@ -13,7 +13,7 @@ export default function Products(props:{arrayApi: any, navGreenMode: boolean, na
           <FilterShop/>
           <Shop api={arrayApi}/>
         </div>
-        <Footer/>
+        <Footer light={false}/>
 
     </div>
   )

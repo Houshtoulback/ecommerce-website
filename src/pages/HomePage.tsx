@@ -13,7 +13,7 @@ export default function HomePage() {
         <Elementor/>
         <Blog/>
         <Comments/>
-        <Footer/>
+        <Footer light={true}/>
     </div>
   )
 }

@@ -26,10 +26,10 @@ export default function Navbar(props: {greenMode: boolean, border: boolean}) {
 
         <div className={`hidden md:flex ${greenMode ? ("text-green-700") : ("text-white") }`}>
             <NavItem  content="Home" link="/" />
-            <NavItem  content="Shop" link="/" />
+            <NavItem  content="Shop" link="/shop" />
             <NavItem  content="About Us" link="/" />
             <NavItem  content="Testimonials" link="/" />
-            <NavItem  content={<FaShoppingCart color="#00AB84" size="25px"/>} link="/" />
+            <NavItem  content={<FaShoppingCart color="#00AB84" size="25px"/>} link="/shopping-cart" />
         </div>
         <div className="md:hidden">
             <NavItem  content={<ImMenu color="#00AB84" size="35px" />} link="/" />
